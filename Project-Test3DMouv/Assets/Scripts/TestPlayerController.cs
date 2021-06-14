@@ -34,7 +34,7 @@ public class TestPlayerController : MonoBehaviour
     }
 
     void AvatarMove(){
-        Vector2 moveValue = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
+        Vector2 moveValue = new Vector2(Input.GetAxis("Vertical"),Input.GetAxis("Horizontal"));
         if (moveValue.magnitude>1){
             moveValue.Normalize();
         }
@@ -51,21 +51,8 @@ public class TestPlayerController : MonoBehaviour
         }else{
             currentSpeed = walkSpeed;
         }
-
-        Vector3 avatarOrientation = Vector3.ProjectOnPlane(transform.forward,Vector3.up);
-        Vector2 avatarOrientation2D = new Vector2(avatarOrientation.x,avatarOrientation.z); 
-
-        float angle = Mathf.Atan2(moveValue.x,moveValue.y) - Mathf.Atan2(avatarOrientation2D.x,avatarOrientation2D.y);
-        Debug.Log(angle.ToString());
-        Debug.Log(moveValue.ToString());
-        moveValue.x = Mathf.Cos(angle) - Mathf.Sin(angle);
-        moveValue.y = Mathf.Sin(angle) + Mathf.Cos(angle);
-        Debug.Log(moveValue.ToString());
-
-
-
-        transform.Translate(moveValue.x*currentSpeed*Time.deltaTime,0,moveValue.y*currentSpeed*Time.deltaTime);
         
+        transform.Translate(new Vector3(transform.forward.z*-moveValue.x,0,transform.forward.z*moveValue.y));
         
     }
 
