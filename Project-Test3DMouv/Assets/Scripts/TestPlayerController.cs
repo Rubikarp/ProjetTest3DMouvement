@@ -87,7 +87,8 @@ public class TestPlayerController : MonoBehaviour
         transform.Translate(
             moveValue.x * currentSpeed * Time.deltaTime, 
             0,
-            moveValue.y * currentSpeed * Time.deltaTime);
+            moveValue.y * currentSpeed * Time.deltaTime, 
+            Space.World);
 
 
         //Debug
