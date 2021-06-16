@@ -309,4 +309,7 @@ MonoBehaviour:
   walkSpeed: 1
   runSpeed: 1
   rotationSpeed: 2
+  lookSpeedX: 3.6
+  lookSpeedY: 7.2
+  lookLimit: 90
   playerCamera: {fileID: 955513346}
