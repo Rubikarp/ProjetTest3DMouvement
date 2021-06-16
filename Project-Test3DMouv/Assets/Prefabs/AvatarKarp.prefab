@@ -309,3 +309,4 @@ MonoBehaviour:
   walkSpeed: 1
   runSpeed: 1
   rotationSpeed: 2
+  playerCamera: {fileID: 955513346}
