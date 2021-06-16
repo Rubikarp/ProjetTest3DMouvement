@@ -100,13 +100,13 @@ public class TestPlayerController : MonoBehaviour
 
     private void AvatarRotation()
     {
-            // Axe Y
+            // Axis Y
             rotationMouse += -Input.GetAxis("Mouse Y") * lookSpeedY;
             // Check if rotationMouse is between lookLimit : if not return the case value : rotationMouse>lookLimit return lookLimit ;  rotationMouse<-lookLimit return -lookLimit
             rotationMouse = Mathf.Clamp(rotationMouse, -lookLimit, lookLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationMouse, 0, 0);
             
-            // Axe X
+            // Axis X
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
 
     }
